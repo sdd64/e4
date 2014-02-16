@@ -1,0 +1,14 @@
+[Event "Let's Play!"]
+[Site "Chess.com"]
+[Date "2013.01.18"]
+[White "nco100"]
+[Black "SeniorDingDong"]
+[Result "0-1"]
+[WhiteElo "1384"]
+[BlackElo "1222"]
+[TimeControl "1 in 3 days"]
+[Termination "SeniorDingDong won by checkmate"]
+
+1.f4 d5 2.d4 g6 3.e3 Nf6 4.Nf3 Bg7 5.c4 O-O 6.c5 Nc6 7.Bb5 Ng4 8.Bxc6 bxc6 9.h3 Nf2 10.Kxf2 e6
+ 11.Rf1 Ba6 12.Re1 Rb8 13.Kg1 f6 14.Qa4 Bb5 15.Qd1 e5 16.fxe5 fxe5 17.Nxe5 Bxe5 18.dxe5 Rf1+ 19.Kh2 Rf2 20.Qd4 Be2
+ 21.e4 Qh4 22.Be3 Rxg2+ 23.Kxg2 Qxe1 24.Bg5 Bf1+ 25.Kh2 Qe2+ 26.Kg3 Qg2+ 27.Kf4 Rf8+ 28.Bf6 g5+ 29.Ke3 Qe2# 0-1
