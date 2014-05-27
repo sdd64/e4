@@ -3,14 +3,14 @@ class E4::Regex
     # regex to match the turns of a pgn game
     #
     # read: 
-    # one up to three digits, number of the move
-    # one seperating dot
+    # pawn coordinations or figures or x for takes
+    # one digit
+    # OR
+    # long or short casteling
     # one optional space
-    # any combination of words, digits, minus or check and checkmate sign
-    # one space, if there is
-    # than again any combination of words, digits, minus or check and checkmate sign
+    # same as above, but optional
     def turns
-      /(\d{1,3}\s?\.[\w\d\-#+]+\s*[\w\d\-#+]+)/
+      /([a-hKQRBNx]{1,3}?\d[#+]?|[0oO\-]{3,5})\s?([a-hKQRBNx]{1,3}?\d[#+]?|[0oO\-]{3,5})?/
     end
 
     # regex to match any kind of description fields
