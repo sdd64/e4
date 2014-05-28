@@ -20,40 +20,39 @@ require 'e4'
 class TestTurnesRegex < Test::Unit::TestCase
   def setup
     file = File.read("test/moves_simple.pgn")
-    cleaned_pgn = E4::PrepareGame.clean_pgn(file)
-    @moves = cleaned_pgn.scan(E4::Regex.turns)
+    @turnes = E4::PrepareGame.get_turns(file)
   end
 
   def test_first_turn
-    assert_equal ["1.f4 d5"], @moves.first
+    assert_equal ["f4", "d5"], @turnes.first
   end
 
   def test_check_symbol_white
-    assert_equal ["2.d4+ g6"], @moves[1]
+    assert_equal ["d4+", "g6"], @turnes[1]
   end
 
   def test_check_symbol_black
-    assert_equal ["3.Bf6 g5+"], @moves[2]
+    assert_equal ["Bf6", "g5+"], @turnes[2]
   end
 
   def test_long_castle
-    assert_equal ["4.0-0-0 Bg7"], @moves[3]    
+    assert_equal ["0-0-0", "Bg7"], @turnes[3]    
   end
 
   def test_castle
-    assert_equal ["5.c4 O-O"], @moves[4]    
+    assert_equal ["c4" ,"O-O"], @turnes[4]    
   end
 
   def test_black_mates
-    assert_equal ["6.Bf6 Nc6#"], @moves[5]
+    assert_equal ["Bf6", "Nc6#"], @turnes[5]
   end
 
   def test_white_mates
-    assert_equal ["7.Bb5#"], @moves.last
+    assert_equal ["Bb5#", nil], @turnes.last
   end
 
-  def test_moves_array
-    assert_equal [["1.f4 d5"], ["2.d4+ g6"], ["3.Bf6 g5+"], 
-    ["4.0-0-0 Bg7"], ["5.c4 O-O"], ["6.Bf6 Nc6#"], ["7.Bb5#"]], @moves
+  def test_turns_array
+    assert_equal [["f4", "d5"], ["d4+", "g6"], ["Bf6", "g5+"], 
+    ["0-0-0", "Bg7"], ["c4" ,"O-O"], ["Bf6", "Nc6#"], ["Bb5#", nil]], @turnes
   end
 end

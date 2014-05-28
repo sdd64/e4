@@ -8,9 +8,12 @@ class E4::Regex
     # OR
     # long or short casteling
     # one optional space
-    # same as above, but optional
+    # same as above, minus the space, but optional
+    #
+    # WARNING: might create entries with surplus space chars. those need to te
+    # stripped
     def turns
-      /([a-hKQRBNx]{1,3}?\d[#+]?|[0oO\-]{3,5})\s?([a-hKQRBNx]{1,3}?\d[#+]?|[0oO\-]{3,5})?/
+      /([a-hKQRBNx]{1,3}?\d[#+]?|[0oO\-]{3,5})(\s?[a-hKQRBNx]{1,3}?\d[#+]?|\s?[0oO\-]{3,5})?/
     end
 
     # regex to match any kind of description fields
