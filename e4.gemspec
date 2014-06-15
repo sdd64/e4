@@ -1,6 +1,5 @@
 # coding: utf-8
-# lib = File.expand_path('../lib', __FILE__)
-# $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+#$:.push File.expand_path("../lib", __FILE__)
 # require 'e4/version'
 
 # Gem::Specification.new do |spec|
@@ -32,9 +31,12 @@ Gem::Specification.new do |s|
   s.description = "E4"
   s.authors     = ["Kai-Markus Lüer"]
   s.email       = 'kailuer@web.de'
-  s.files       = ["lib/e4.rb", "lib/e4/version.rb", "lib/e4/regex", "lib/e4/prepare_game"]
+  s.files         = `git ls-files`.split("\n")
+  s.test_files = Dir.glob("test/**/*.rb")
   s.homepage    = ""
   s.license     = 'MIT'
   s.add_development_dependency "bundler", "~> 1.5"
   s.add_development_dependency "rake"
+  s.add_development_dependency "require_all"
+  s.add_development_dependency "pry"
 end
